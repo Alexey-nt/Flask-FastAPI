@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <title>{{ title }}</title>
+</head>
+<body>
+<h1 class="text-monospace">Привет, меня зовут {{ name }}</h1>
+<div class="container-fluid">
+    <form action="/submit" method="post">
+        <input type="text" name="name" placeholder="Имя">
+        <input type=submit value=Отправить>
+    </form>
+</div>
+<p class="text-body text-justify">
+    lorem
+</p>
+<p class="alert-dark">Все права защищены &copy;</p>
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>
