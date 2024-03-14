@@ -1,5 +1,7 @@
 from pathlib import PurePath, Path
+
 from flask import Flask, render_template, request
+from markupsafe import escape
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
@@ -16,9 +18,8 @@ def submit():
         file = request.files.get("file")
         file_name = secure_filename(file.filename)
         file.save(PurePath.joinpath(Path.cwd(), "uploads", file_name))
-        return f"Файл {file_name} загружен на сервер."
-    return render_template("upload.html")
-
+        return f"Файл {file_name} загружен на сервер"
+    return render_template('upload.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
