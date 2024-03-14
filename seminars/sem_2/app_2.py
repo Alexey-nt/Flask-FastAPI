@@ -10,14 +10,14 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/submit/', method=['GET', 'POST'])
+@app.route('/submit/', methods=['GET', 'POST'])
 def submit():
     if request.method == "POST":
-        file = request.file.get("file")
+        file = request.files.get("file")
         file_name = secure_filename(file.filename)
         file.save(PurePath.joinpath(Path.cwd(), "uploads", file_name))
         return f"Файл {file_name} загружен на сервер."
-    return render_template('upload.html')
+    return render_template("upload.html")
 
 
 if __name__ == '__main__':
