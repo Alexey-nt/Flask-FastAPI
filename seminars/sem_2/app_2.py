@@ -1,3 +1,9 @@
+"""
+Задание №2
+Создать страницу, на которой будет изображение и ссылка
+на другую страницу, на которой будет отображаться форма
+для загрузки изображений.
+"""
 from pathlib import PurePath, Path
 
 from flask import Flask, render_template, request
