@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <title>Students</title>
+</head>
+<body>
+<div class="row">
+    {% for st in student %}
+    <p>
+        Имя: {{ st.name }}<br>
+        Фамилия: {{ st.last_name }}<br>
+        Возраст: {{ st.age }}<br>
+        Пол: {{ st.gender }}<br>
+        Группа: {{ st.group }}<br>
+        Факультет: {{ st.fags.fag_name }}<br>
+    </p>
+    {% endfor %}}
+</div>
+</body>
+</html>
