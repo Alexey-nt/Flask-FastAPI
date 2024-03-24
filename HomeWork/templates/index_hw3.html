@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <title>Library</title>
+</head>
+<body>
+<div class="row">
+    <h2>Наша библиотека предоставляет доступ к следующим книгам:</h2>
+    {% for bk in book %}
+    <p>
+        Название книги: {{ bk.name_book }}<br>
+        Год издания: {{ bk.year_of_publication }}<br>
+        Кол-во: {{ bk.count }}<br>
+        Автор: {{ bk.author.name, bk.author.lastname }}<br>
+    </p>
+    {% endfor %}}
+</div>
+</body>
+</html>
